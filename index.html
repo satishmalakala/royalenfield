@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ROYAL ENFIELD // 3D EXPLODED ARCHITECTURE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏍️</text></svg>">
+    <script>
+        // Safety timeout guarantees preloader never hangs
+        setTimeout(function() {
+            var loader = document.getElementById('loader');
+            if (loader && !loader.dataset.dismissed) {
+                loader.dataset.dismissed = 'true';
+                loader.classList.add('fade-out');
+                setTimeout(function() { try { loader.remove(); } catch(e){} }, 800);
+            }
+        }, 8000);
+    </script>
+</head>
+<body>
+
+    <!-- Fixed 3D WebGL Canvas Viewport -->
+    <div id="canvas-container"></div>
+
+    <!-- Cinematic Preloader -->
+    <div id="loader">
+        <div class="loader-crest">
+            <div class="loader-crest-inner">R</div>
+        </div>
+        <div class="loader-title">ROYAL ENFIELD</div>
+        <div class="loader-sub">INITIALIZING 3D MOTORCYCLE SHOWROOM</div>
+        <div class="loader-bar-bg">
+            <div class="loader-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Fixed Floating HUD Header (Minimalist Luxury Automotive UI) -->
+    <header class="hud-layer">
+        <div class="hud-top">
+            <div class="brand-block">
+                <h1 class="brand-title">ROYAL ENFIELD</h1>
+                <div class="brand-subtitle">GUERRILLA 450 // BRAVA BLUE ROADSTER</div>
+                <div class="brand-meta">SHERPA 450 LIQUID-COOLED // MODULAR ARCHITECTURE</div>
+            </div>
+
+            <div class="status-container">
+                <div id="system-status" class="status-badge stabilized">NORMAL // FULLY ASSEMBLED</div>
+                <div id="telemetry-val" class="telemetry-tag">0% DECONSTRUCTION</div>
+
+                <!-- Quick Action Tools -->
+                <div class="quick-tools hud-interactive">
+                    <div class="view-mode-group">
+                        <button class="mode-btn active" data-mode="studio" title="Showroom Studio Lighting">STUDIO</button>
+                        <button class="mode-btn" data-mode="grid" title="Modular Bounding Grid">GRID</button>
+                        <button class="mode-btn" data-mode="xray" title="Holographic X-Ray">X-RAY</button>
+                    </div>
+
+                    <button id="test-drive-btn" class="hud-btn test-drive-btn" title="Take Royal Enfield Guerrilla 450 for a Test Drive [T]">
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-label">TEST DRIVE</span>
+                    </button>
+
+                    <button id="audio-toggle" class="hud-btn" title="Toggle Mechanical Audio">
+                        <span class="btn-icon">🔊</span>
+                        <span class="btn-label">AUDIO OFF</span>
+                    </button>
+
+                    <button id="reset-btn" class="hud-btn" title="Reset Assembled State">
+                        <span class="btn-icon">↺</span>
+                        <span class="btn-label">ASSEMBLE</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Center: Scroll & Drag Hint -->
+        <div class="hud-bottom-center hud-interactive">
+            <div id="current-stage-tag" class="stage-pill">STAGE 01 // 100% ASSEMBLED SHOWROOM</div>
+            <div class="drag-hint">↓ SCROLL TO DISASSEMBLE  •  ↔ DRAG TO ROTATE 360°  •  ↑ SCROLL TO ASSEMBLE</div>
+        </div>
+
+        <!-- Bottom Left: Bespoke Colorway Swatches -->
+        <footer class="hud-bottom-bar hud-interactive">
+            <div class="color-picker-block">
+                <div class="color-picker-title">GUERRILLA 450 COLORWAY</div>
+                <div class="swatches-row">
+                    <div class="color-swatch active" style="background: linear-gradient(135deg, #f8fafc 40%, #00c4f0 100%); border-color: #00c4f0;" data-color="0x00c4f0" data-name="BRAVA BLUE" title="Brava Blue & Cyan Alloy"></div>
+                    <div class="color-swatch" style="background: #14171a; border-color: #ff3366;" data-color="0x14171a" data-name="PLAYA BLACK" title="Playa Black & Red"></div>
+                    <div class="color-swatch" style="background: #f59e0b; border-color: #fbbf24;" data-color="0xf59e0b" data-name="YELLOW RIBBON" title="Yellow Ribbon Edition"></div>
+                    <div class="color-swatch" style="background: #94a3b8; border-color: #cbd5e1;" data-color="0x94a3b8" data-name="SMOKE SILVER" title="Smoke Silver Metallic"></div>
+                </div>
+            </div>
+        </footer>
+    </header>
+
+    <!-- Scroll Track & Page Narrative Structure -->
+    <main class="page-content">
+
+        <!-- SECTION 1: Hero Section (Completely Assembled Showroom Motorcycle) -->
+        <section id="section-1" class="hero-section">
+            <div class="hero-content">
+                <span class="sub-heading">THE MODERN ROADSTER</span>
+                <h2 class="main-heading">GUERRILLA 450</h2>
+                <p class="hero-desc">
+                    Intuitive, responsive, and stripped to the bare essentials. Featuring the 452cc Sherpa liquid-cooled powertrain, signature Electric Cyan subframe trellis, and modern 17-inch cast alloy wheels.
+                </p>
+                <div class="hero-actions">
+                    <button id="hero-drive-btn" class="hero-drive-btn" title="Launch Interactive Test Drive">
+                        <span class="drive-pulse"></span>
+                        <span class="drive-icon">⚡</span>
+                        <span>TAKE TEST DRIVE</span>
+                    </button>
+                    <div class="scroll-prompt">
+                        <span class="scroll-arrow">↓</span>
+                        <span class="prompt-text">OR SCROLL TO DECONSTRUCT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Large Sticky 3D Scroll Visualization Track (Drives Explosion 0% to 100%) -->
+        <div id="scroll-track" class="scroll-track-container">
+            <div class="scroll-stage stage-20">
+                <div class="stage-card left-card">
+                    <span class="stage-num">PHASE 01 // 20% SCROLL</span>
+                    <h3 class="stage-title">INITIAL UNCOUPLING</h3>
+                    <p class="stage-desc">Fasteners disengage. The 17" Electric Cyan front alloy wheel and sculpted roadster fuel tank begin moving slightly apart along precision axial tracks.</p>
+                </div>
+            </div>
+
+            <div class="scroll-stage stage-40">
+                <div class="stage-card right-card">
+                    <span class="stage-num">PHASE 02 // 40% SCROLL</span>
+                    <h3 class="stage-title">MAJOR COMPONENT EXPANSION</h3>
+                    <p class="stage-desc">The Brava Blue fuel tank elevates smoothly upward. The sculpted roadster bench saddle glides backward and up. Front 43mm telescopic forks and cockpit shift forward.</p>
+                </div>
+            </div>
+
+            <div class="scroll-stage stage-60">
+                <div class="stage-card left-card">
+                    <span class="stage-num">PHASE 03 // 60% SCROLL</span>
+                    <h3 class="stage-title">POWERTRAIN & EXHAUST SEPARATION</h3>
+                    <p class="stage-desc">The 452cc Sherpa liquid-cooled single block and vertical aluminum radiator separate downward into full view. The stubby scrambler megaphone silencer detaches laterally.</p>
+                </div>
+            </div>
+
+            <div class="scroll-stage stage-80">
+                <div class="stage-card right-card">
+                    <span class="stage-num">PHASE 04 // 80% SCROLL</span>
+                    <h3 class="stage-title">ORGANIZED 3D EXPLODED GRID</h3>
+                    <p class="stage-desc">Every major subassembly hovers suspended in millimeter alignment. Dynamic laser tethers link each module back to the twin-spar spine and Electric Cyan subframe trellis.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Exploded Showcase & Component Specifications -->
+        <section id="section-3" class="showcase-section">
+            <div class="showcase-header">
+                <span class="sub-heading">PHASE 05 // 100% SCROLL</span>
+                <h2 class="main-heading">COMPLETE EXPLODED ARCHITECTURE</h2>
+                <p class="showcase-sub">SELECT ANY COMPONENT TO INSPECT BLUEPRINT TOLERANCES & MECHANICAL SPECIFICATIONS</p>
+            </div>
+
+            <div class="components-grid">
+                <!-- MOD-01 -->
+                <div class="component-card module-quick-link" data-module="frontWheel">
+                    <span class="card-id">MOD-01 // FRONT ROTOR</span>
+                    <h4 class="card-title">17" Electric Cyan Alloy</h4>
+                    <p class="card-desc">Factory Electric Cyan 5-split-spoke alloy wheel, 120/70-17 radial tire, and 310mm ventilated rotor with ByBre caliper.</p>
+                    <span class="card-link">INSPECT COMPONENT →</span>
+                </div>
+
+                <!-- MOD-08 -->
+                <div class="component-card module-quick-link" data-module="engine">
+                    <span class="card-id">MOD-08 // POWERTRAIN</span>
+                    <h4 class="card-title">452cc Sherpa Liquid-Cooled</h4>
+                    <p class="card-desc">DOHC 4-valve counterbalanced single cylinder with front vertical radiator, protective mesh screen, and slipper clutch.</p>
+                    <span class="card-link">INSPECT COMPONENT →</span>
+                </div>
+
+                <!-- MOD-06 -->
+                <div class="component-card module-quick-link" data-module="fuelTank">
+                    <span class="card-id">MOD-06 // RESERVOIR</span>
+                    <h4 class="card-title">Roadster Tank // Brava Blue</h4>
+                    <p class="card-desc">11L sculpted roadster tank featuring Pearl White top, Electric Cyan-to-Navy gradient sweep, and flush aero filler cap.</p>
+                    <span class="card-link">INSPECT COMPONENT →</span>
+                </div>
+
+                <!-- MOD-09 -->
+                <div class="component-card module-quick-link" data-module="exhaust">
+                    <span class="card-id">MOD-09 // EXHAUST</span>
+                    <h4 class="card-title">Scrambler Stubby Silencer</h4>
+                    <p class="card-desc">Single right-side stainless header curving under engine into an upswept stubby scrambler megaphone silencer in brushed aluminum.</p>
+                    <span class="card-link">INSPECT COMPONENT →</span>
+                </div>
+
+                <!-- MOD-07 -->
+                <div class="component-card module-quick-link" data-module="seat">
+                    <span class="card-id">MOD-07 // SADDLE</span>
+                    <h4 class="card-title">Contoured Roadster Bench</h4>
+                    <p class="card-desc">One-piece contoured roadster bench seat wrapped in textured black upholstery, resting on the Electric Cyan trellis subframe.</p>
+                    <span class="card-link">INSPECT COMPONENT →</span>
+                </div>
+
+                <!-- MOD-10 -->
+                <div class="component-card module-quick-link" data-module="frame">
+                    <span class="card-id">MOD-10 // CHASSIS</span>
+                    <h4 class="card-title">Cyan Trellis Subframe & Spine</h4>
+                    <p class="card-desc">Tubular steel twin-spar main frame paired with the iconic Guerrilla Brava Blue tubular steel subframe trellis in Electric Cyan.</p>
+                    <span class="card-link">INSPECT COMPONENT →</span>
+                </div>
+            </div>
+
+            <div class="reassemble-cta">
+                <button onclick="window.RE_App.resetBike()" class="assemble-btn">
+                    <span>↑ SCROLL UP OR CLICK TO REASSEMBLE MOTORCYCLE</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Engineering Blueprint Drawer -->
+    <aside id="inspector-drawer" class="inspector-drawer" aria-hidden="true">
+        <div>
+            <div class="drawer-header">
+                <span class="drawer-badge">AEROSPACE BLUEPRINT // SPECIFICATION</span>
+                <button id="close-inspector" class="close-btn" title="Close Drawer">✕</button>
+            </div>
+            <h2 id="inspector-title" class="inspector-title">MODULE // SPECIFICATIONS</h2>
+            <p id="inspector-desc" class="inspector-desc">Detailed engineering breakdown and mechanical tolerances.</p>
+            <div class="inspector-section-label">TECHNICAL SPECIFICATIONS</div>
+            <ul id="inspector-specs" class="specs-list"></ul>
+        </div>
+        <div class="drawer-footer">
+            <div class="drawer-telemetry">CALIBRATION: HARMONIC 3D ALIGNMENT</div>
+            <div class="drawer-telemetry">MATERIAL GRADE: T6 ALUMINUM / HIGH-TENSILE CHROME</div>
+        </div>
+    </aside>
+
+    <!-- TEST DRIVE COCKPIT HUD OVERLAY -->
+    <div id="test-drive-overlay" class="test-drive-overlay hidden">
+        <!-- Top Telemetry Ribbon -->
+        <div class="drive-top-bar">
+            <div class="drive-badge">
+                <span class="pulse-dot"></span>
+                <span>TEST DRIVE // ACTIVE</span>
+            </div>
+            <div class="drive-mode-tag">RIDE MODE: TRACK // SHERPA 452cc</div>
+            <button id="auto-drive-btn" class="drive-btn auto-btn" title="Toggle AI Autonomous Cruise [Z]">
+                <span>⚡</span>
+                <span id="auto-label">AUTO CRUISE</span>
+            </button>
+            <button id="drive-360-btn" class="drive-btn orbit-btn" title="Toggle 360° Panoramic Orbit [X]">
+                <span>🔄</span>
+                <span id="orbit-label">360° ORBIT</span>
+            </button>
+            <button id="drive-cam-btn" class="drive-btn cam-btn" title="Toggle Camera View [C]">
+                <span>📷</span>
+                <span id="cam-label">CHASE CAM</span>
+            </button>
+            <button id="exit-drive-btn" class="drive-btn exit-btn" title="Exit Test Drive [ESC]">
+                <span>✕</span>
+                <span>EXIT DRIVE</span>
+            </button>
+        </div>
+
+        <!-- Center Cockpit Virtual Instruments -->
+        <div class="cockpit-dash">
+            <!-- Left: Lean Angle -->
+            <div class="dash-cluster cluster-left">
+                <div class="cluster-label">LEAN ANGLE</div>
+                <div id="lean-meter" class="cluster-value">0° C</div>
+                <div class="lean-bar-wrap">
+                    <div id="lean-indicator" class="lean-bar-indicator"></div>
+                </div>
+            </div>
+
+            <!-- Center: Digital Speed & Gear -->
+            <div class="dash-cluster cluster-center">
+                <!-- Tachometer Arc / Bar -->
+                <div class="tach-container">
+                    <div class="tach-bar-bg">
+                        <div id="tach-bar" class="tach-bar-fill"></div>
+                    </div>
+                    <div class="tach-labels">
+                        <span>0</span>
+                        <span>2K</span>
+                        <span>4K</span>
+                        <span>6K</span>
+                        <span class="redline">8K</span>
+                        <span class="redline">9K</span>
+                    </div>
+                </div>
+
+                <div class="speed-readout">
+                    <span id="speed-display" class="speed-number">0</span>
+                    <span class="speed-unit">KM/H</span>
+                </div>
+
+                <div class="gear-and-rpm">
+                    <div class="gear-badge">GEAR <span id="gear-display">N</span></div>
+                    <div class="rpm-badge"><span id="rpm-display">1400</span> RPM</div>
+                </div>
+            </div>
+
+            <!-- Right: Throttle & Brake Input Meters -->
+            <div class="dash-cluster cluster-right">
+                <div class="input-meter-row">
+                    <span class="input-meter-label">THR</span>
+                    <div class="input-meter-bg">
+                        <div id="thr-meter-fill" class="input-meter-fill thr-fill"></div>
+                    </div>
+                </div>
+                <div class="input-meter-row">
+                    <span class="input-meter-label">BRK</span>
+                    <div class="input-meter-bg">
+                        <div id="brk-meter-fill" class="input-meter-fill brk-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Controls & Key Hints -->
+        <div class="drive-controls-bar">
+            <div class="steer-controls">
+                <button id="btn-steer-left" class="drive-ctrl-btn" title="Steer Left [A]">◀</button>
+                <button id="btn-steer-right" class="drive-ctrl-btn" title="Steer Right [D]">▶</button>
+            </div>
+            <div class="key-hints">
+                <span>[W] GAS</span> • <span>[S] BRAKE</span> • <span>[A/D] STEER</span> • <span>↔ DRAG 360°</span> • <span>[X] 360° ORBIT</span> • <span>[Z] AUTO CRUISE</span> • <span>[C] CAM</span> • <span>[ESC] EXIT</span>
+            </div>
+            <div class="pedal-controls">
+                <button id="btn-brake" class="drive-ctrl-btn brake-btn" title="Brake [S]">🛑 BRAKE</button>
+                <button id="btn-accel" class="drive-ctrl-btn gas-btn" title="Accelerate [W]">⚡ GAS</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Libraries -->
+    <script src="vendor/three.min.js"></script>
+    <script src="vendor/gsap.min.js"></script>
+
+    <!-- Application Modules -->
+    <script src="js/materials.js"></script>
+    <script src="js/bikeModel.js"></script>
+    <script src="js/modularGrid.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/testDrive.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
